@@ -1,4 +1,3 @@
-/* eslint-disable multiline-ternary */
 import { useGetInfoUser } from '@/account/hooks/useAccount';
 import { updateAccountUser } from '@/account/slice';
 import { accountImage } from '@/common/constants/imagePath';
