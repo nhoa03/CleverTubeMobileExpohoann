@@ -33,17 +33,11 @@ import {
 } from '@/common/constants/route.constants';
 
 import { useGetInfoUser } from '@/account/hooks/useAccount';
-// import { useAppDispatch } from '@/common/hooks/useAppDispatch';
-// import { resetStateAuth } from '@clvtube/auth/slice';
-// import { useAppSelector } from '@/common/hooks/useAppSelector';
 
 const Account = () => {
   const { t } = useTranslation();
   const navigate = useNavigation();
   const { top: insetTop } = useSafeAreaInsets();
-
-  // const dispatch = useAppDispatch();
-  // const accountUser = useAppSelector(state => state.accountReducer);
 
   const { data: userInfo } = useGetInfoUser();
 
@@ -61,15 +55,7 @@ const Account = () => {
   }, [userInfo]);
 
   const handleLogoutApp = async () => {
-    // try {
-    //   await AsyncStorage.clear();
-    //   dispatch(resetStateAuth());
-    //   await GoogleSignin.revokeAccess();
-    //   await auth().signOut();
-    // } catch (err) {
-    //   console.log(err);
-    // }
-    // navigate.navigate(AUTH as never);
+    // Logout logic
   };
 
   return (
@@ -89,7 +75,7 @@ const Account = () => {
             </Box>
             <VStack space={1}>
               <Text width={180} fontSize="20px" fontWeight={600} color="#4D4D4D">
-                {userInfo?.data?.client?.fullname || 'Người dùng mới'}
+                {userInfo?.data?.client?.fullname || t('account.newUser')}
               </Text>
               <Badge
                 w="50%"
@@ -97,18 +83,12 @@ const Account = () => {
                 borderRadius="10px"
                 _text={{ color: '#3D9BE0', fontWeight: 400 }}
               >
-                {userInfo?.data?.client?.clientPlan?.plan?.type || 'Beginner'}
+                {userInfo?.data?.client?.clientPlan?.plan?.type || t('plan.beginner')}
               </Badge>
             </VStack>
           </HStack>
 
-          <View
-            style={{
-              borderStyle: 'dashed',
-              borderWidth: 1,
-              borderColor: '#DEDEDE',
-            }}
-          />
+          <View style={{ borderStyle: 'dashed', borderWidth: 1, borderColor: '#DEDEDE' }} />
 
           <HStack w="full" justifyContent="space-between" alignItems="center">
             <HStack alignItems="center" space={2}>
@@ -117,15 +97,10 @@ const Account = () => {
                 {userInfo?.data?.userDiamond?.totalDiamonds || '0'}
               </Text>
             </HStack>
-            <TouchableOpacity
-              onPress={() => {
-                // @ts-ignore
-                navigate.navigate(DIAMOND_SCREEN, {});
-              }}
-            >
+            <TouchableOpacity onPress={() => navigate.navigate(DIAMOND_SCREEN as never)}>
               <HStack alignItems="center" space={2}>
                 <Text color="#444444" fontSize="12px" fontWeight={400}>
-                  Săn thưởng kim cương
+                  {t('account.huntDiamonds')}
                 </Text>
                 <SimpleLineIcons name="arrow-right" size={15} color="black" />
               </HStack>
@@ -135,28 +110,23 @@ const Account = () => {
 
         <HStack w="100%" backgroundColor="#3988F0" p={3} borderRadius="12px" shadow="2" space={3}>
           <Image source={accountImage.ICON_PLUS} alt="icon plus" w="47px" />
-          <TouchableOpacity
-            onPress={() => {
-              // @ts-ignore
-              // navigate.navigate(UPDATE_ACCOUNT);
-            }}
-          >
+          <TouchableOpacity>
             {userInfo?.data?.client?.clientPlan?.plan?.type === 'PREMIUM' ? (
               <VStack>
                 <Text fontSize="16px" fontWeight={600} color="#FFF">
-                  CleverTube Plus của tôi
+                  {t('account.myPlus')}
                 </Text>
                 <Text fontSize="12px" fontWeight={400} color="#EBF8FE">
-                  Xem thông tin
+                  {t('account.viewInfo')}
                 </Text>
               </VStack>
             ) : (
               <VStack>
                 <Text fontSize="16px" fontWeight={600} color="#FFF">
-                  Đăng ký CleverTube Plus
+                  {t('account.subscribePlus')}
                 </Text>
                 <Text fontSize="12px" fontWeight={400} color="#EBF8FE">
-                  Học không giới hạn với mọi tính năng
+                  {t('account.unlimitedLearning')}
                 </Text>
               </VStack>
             )}
@@ -166,18 +136,13 @@ const Account = () => {
 
       <VStack backgroundColor="white">
         <VStack mt={3}>
-          <TouchableOpacity
-            onPress={() => {
-              // @ts-ignore
-              navigate.navigate(ACCOUNT_ROUTE.EDIT_ACCOUNT);
-            }}
-          >
+          <TouchableOpacity onPress={() => navigate.navigate(ACCOUNT_ROUTE.EDIT_ACCOUNT as never)}>
             <Box height="53px" borderRadius="13px" borderBottomWidth="1px" px={5} borderColor="#F1F1F1">
               <HStack height="100%" justifyContent="space-between" alignItems="center">
                 <HStack space={4} alignItems="center">
                   <Feather name="user" size={23} color="#292D32" />
                   <Text color="#000" fontSize="14px" fontWeight={400}>
-                    Thông tin tài khoản
+                    {t('account.accountInfo')}
                   </Text>
                 </HStack>
                 <SimpleLineIcons name="arrow-right" size={15} color="#999999" />
@@ -185,18 +150,13 @@ const Account = () => {
             </Box>
           </TouchableOpacity>
 
-          <TouchableOpacity
-            onPress={() => {
-              // @ts-ignore
-              navigate.navigate(USER_SAVE_MEDIA);
-            }}
-          >
+          <TouchableOpacity onPress={() => navigate.navigate(USER_SAVE_MEDIA as never)}>
             <Box height="53px" borderRadius="13px" borderBottomWidth="1px" px={5} borderColor="#F1F1F1">
               <HStack height="100%" justifyContent="space-between" alignItems="center">
                 <HStack space={4} alignItems="center">
                   <Icon as={Entypo} name="heart-outlined" size={23} color="#292D32" />
                   <Text color="#000" fontSize="14px" fontWeight={400}>
-                    Bộ sưu tập
+                    {t('account.collection')}
                   </Text>
                 </HStack>
                 <SimpleLineIcons name="arrow-right" size={15} color="#999999" />
@@ -204,27 +164,20 @@ const Account = () => {
             </Box>
           </TouchableOpacity>
 
-          {/* Modal chọn ngôn ngữ */}
           {showModalLanguage && (
             <Language showModal={showModalLanguage} setShowModal={setShowModalLanguage} />
           )}
 
-          {/* Banner quảng cáo nếu chưa Premium */}
           <Box w="full" backgroundColor="gray.200">
-            {/* Uncomment nếu dùng accountUser */}
-            {/* {accountUser.plan === 'PREMIUM' ? null : ( */}
             <Box width="full" backgroundColor="#F4F4F4">
               <AdaptiveBanner />
             </Box>
-            {/* )} */}
           </Box>
 
-          {/* Modal Dark Mode */}
           {showModalDarkMode && (
             <DarkMode showModal={showModalDarkMode} setShowModal={setShowModalDarkMode} />
           )}
 
-          {/* Popup Logout */}
           {showModalLogout && (
             <Popup
               showModal={showModalLogout}
@@ -234,13 +187,12 @@ const Account = () => {
               description={t('confirmLogout')}
               textButton={t('logout')}
               colorButton="popup.warning"
-              textClose="Huỷ"
+              textClose={t('cancel')}
               icon={imageNotify.WARNING}
               onPress={handleLogoutApp}
             />
           )}
 
-          {/* Nút đăng xuất */}
           <Box px={5}>
             <TouchableOpacity onPress={() => setShowModalLogout(true)}>
               <Box height="57px">
@@ -256,7 +208,7 @@ const Account = () => {
         </VStack>
 
         <HStack justifyContent="center" background="#F5F5F5" py={5}>
-          <Text color="#B1B4B6">Phiên bản 1.0.0</Text>
+          <Text color="#B1B4B6">{t('version', { version: '1.0.0' })}</Text>
         </HStack>
       </VStack>
     </ScrollView>

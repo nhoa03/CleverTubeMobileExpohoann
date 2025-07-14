@@ -19,17 +19,6 @@ export const CREATE_NEW_FOLDER_FOR_SAVING_WORD = "/user-save-words/group";
 export const USER_SAVES_WORD = "/user-save-words/word";
 export const ADMIN_DICTIONARY = "/admin/dictionaries";
 export const USER_SAVE_MEDIA = "/user-save-media";
-export const GAME_CHOOSE_RIGHT_WORD_AMOUNT_QUESTION =
-  "/game/choose-right-word/question/";
-export const GAME_CHOOSE_RIGHT_WORD_RESULT = "/game/choose-right-word/result";
-export const GAME_CHOOSE_RIGHT_WORD_GET_RIGHT_ANSWER =
-  "/game/choose-right-word/answer";
-export const GAME_DRAG_WORD_AMOUNT_QUESTION = "/game/drag-drop/question";
-export const GAME_DRAG_WORD_GET_CORRECT_ANSWER = "/game/drag-drop/answer";
-export const PODCAST_TRANSCRIPT = "/client/audio-transcript";
-
-export const SOCKET_GAME_DRAG_DROP = "/game-drag-drop";
-export const SOCKET_GAME_CHOOSE_WORD = "/game-choose-right-word";
 
 export const IS_CHECK_IN = "/client/event-bonus-point/is-check-in";
 export const CHECK_IN = "/client/event-bonus-point/check-in-date";
@@ -64,31 +53,4 @@ export const USER_VOCAB = "/client/user-vocab";
 export const USER_VOCAB_FOLDER = "/client/user-vocab-folder";
 export const LEFT_AMOUNT_SAVE_WORD = "/client/user-vocab/left-amount";
 
-// Game
-export const GAME_HISTORY_ACHIEVEMENT =
-  "/client/game-offline-play-history/achievements";
-export const QUESTION_GAME_FILL_GAP = "/client/game-fill-the-gap/questions";
-export const QUESTION_CHOOSE_CORRECT_WORD =
-  "/client/game-choose-correct-word/questions";
-export const QUESTION_CHOOSE_CORRECT_MEANING =
-  "/client/game-choose-correct-meaning/questions";
-// GAME
-export const GAME_ACHIEVEMENTS =
-  "/client/game-offline-play-history/achievements";
-export const URL_GAME_FLASH_CARD = "/client/game-flash-card/cards";
-
-export const URL_GAME_OFFLINE_PLAY_HISTORY =
-  "/client/game-offline-play-history";
-
-export const GAME_SHUFFLE_SENTENCE_QUESTIONS =
-  "/client/game-shuffle-sentence/questions";
-export const GAME_SHUFFLE_WORD_QUESTIONS =
-  "/client/game-shuffle-word/questions";
-
-export const PROGRESS_WATCH_ADS = "/client/mission/progress-watch-ads";
-
 export const URL_BUY_GOOGLE_BILLING = "/client/diamond/buy-by-google-billing";
-
-// Review Vocab
-export const API_GET_REVIEW_VOCAB = "/client/review-vocab/flash-card";
-export const API_UPDATE_STATUS_VOCAB = "/client/user-vocab/status";

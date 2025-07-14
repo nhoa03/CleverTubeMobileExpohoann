@@ -1,13 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-
-interface IInitialState {
-  appVersion: string;
-  codePushVersion: string | undefined;
-  onBoarding: boolean;
-  isRegisterFirstDownload: boolean;
-  isLoginAfterLogout: boolean;
-  deviceTokens: string[];
-}
+import { IInitialState } from "@/common/redux/types";
 
 const initialState: IInitialState = {
   // use this to control ask permission on first time

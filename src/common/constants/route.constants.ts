@@ -11,6 +11,23 @@ export const HOME_ROUTE = {
   SEARCH: "Search",
 };
 
+// 🎉 Route rule TabBottom
+export const TAB_BOTTOM = "TabBottom";
+
+export const BOTTOM_TAB_HOME_PAGE = "TabBottomHomePage";
+export const BOTTOM_TAB_SOCIAL_PAGE = "TabBottomSocialPage";
+export const BOTTOM_TAB_VIDEO_LIST = "TabBottomVideoList";
+export const BOTTOM_TAB_PODCAST_LIST = "TabBottomPodcastList";
+export const BOTTOM_TAB_ACCOUNT = "TabBottomAccount";
+
+// 🎉 Route rule VideoNavigator
+export const VIDEO_ROUTE = {
+  INDEX: "VideoIndex",
+  VIDEO_LIST: "VideoList",
+  VIDEO_PLAYING: "VideoPlaying",
+  POPUP: "Popup",
+};
+
 // 🎉 Route rule SocialNavigator
 export const SOCIAL_ROUTE = {
   INDEX: "Index",
@@ -24,6 +41,7 @@ export const ACCOUNT_ROUTE = {
 };
 
 // Route rule Home
+export const PODCAST_DETAIL = "PodcastDetail";
 export const HOME = "Home";
 export const SEARCH_PAGE = "Search";
 export const VIDEO_DETAILS_PAGE = "VideoDetails";
