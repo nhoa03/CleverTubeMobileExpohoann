@@ -9,9 +9,6 @@ import BannerContainer from '@/home/components/BannerContainer';
 import HeaderContainer from '@/home/components/HomeHeader';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ServiceContainer from '@/home/components/service';
-import FeatureVideoContainer from '@/home/components/FeatureVideoContainer';
-import HorizontalPodcastSection from '@/home/components/HorizontalPodcastSection';
-import LatestVideo from '@/home/components/LatestVideo';
 import { useGetHomeClient } from '@/home/hooks/useGetHomeClient';
 import { SectionType } from '@/home/common/constants';
 import {
@@ -20,7 +17,6 @@ import {
   ISectionService,
   ISectionVideo,
 } from '@/home/common/interface';
-import LatestPodcast from '@/home/components/LatestPodcast';
 // import HomeSkeleton from '@clvtube/home/components/HomeSkeleton';
 import AdaptiveBanner from '@/common/components/ads/AdaptiveBanner';
 import { Dimensions, RefreshControl } from 'react-native';
@@ -215,37 +211,12 @@ const HomePage = () => {
 
             {/* FeatureVideoContainer */}
 
-            {!cacheDataVideo || (cacheDataVideo && (!cacheDataVideo.data || cacheDataVideo.data.length === 0)) ? (
-              <Skeleton width={width} height={width / RATIO_BANNER} />
-            ) : (
-              <FeatureVideoContainer data={cacheDataVideo} />
-            )}
+          
             {/* dataFeatureAudio */}
 
-            {!cacheDataAudio || (cacheDataAudio && (!cacheDataAudio.data || cacheDataAudio.data.length === 0)) ? (
-              <Skeleton width={width} height={width / RATIO_BANNER} />
-            ) : (
-              <>
-                <HorizontalPodcastSection dataSection={cacheDataAudio} />
-                {data?.data?.client?.clientPlan?.plan?.type === 'PREMIUM' ? (
-                  <></>
-                ) : (
-                  <AdaptiveBanner />
-                )}
-              </>
-            )}
             {/* DataLatestVideoSection */}
-            {!cacheDataLatestVideo || (cacheDataLatestVideo && (!cacheDataLatestVideo.data || cacheDataLatestVideo.data.length === 0)) ? (
-              <Skeleton width={width} height={width / RATIO_BANNER} />
-            ) : (
-              <LatestVideo dataLatestSection={cacheDataLatestVideo} />
-            )}
-            {/* DataLatestPodcast */}
-            {!cacheDataLatestPodcast || (cacheDataLatestPodcast && (!cacheDataLatestPodcast.data || cacheDataLatestPodcast.data.length === 0)) ? (
-              <Skeleton width={width} height={width / RATIO_BANNER} />
-            ) : (
-              <LatestPodcast dataSection={cacheDataLatestPodcast} />
-            )}
+           
+           
           </VStack>
       </ScrollView>
     </SafeAreaView>

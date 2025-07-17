@@ -1,7 +1,7 @@
 import { FlatList, Stack } from 'native-base';
 import React from 'react';
 import ServiceItem from './components/ServiceItem';
-import { ISectionService } from '@clvtube/home/common/interface';
+import { ISectionService } from '@/home/common/interface';
 
 const ServiceContainer = ({ data }: { data: ISectionService }) => {
   return (

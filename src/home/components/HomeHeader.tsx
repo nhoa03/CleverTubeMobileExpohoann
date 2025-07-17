@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { HStack, Image, Text } from 'native-base';
-import { ICON_ASSETS, imageLogo } from '@clvtube/common/constants/imagePath';
+import { ICON_ASSETS, imageLogo } from '@/common/constants/imagePath';
 import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { useAppSelector } from '@clvtube/common/hooks/useAppSelector';
-import { AUTH, NOTIFICATION } from '@clvtube/common/constants/route.constants';
+import { useAppSelector } from '@/common/hooks/useAppSelector';
+import { AUTH, NOTIFICATION } from '@/common/constants/route.constants';
 
 const HeaderContainer = () => {
   const navigator = useNavigation();

@@ -1,9 +1,9 @@
-import ModalWarningLogin from '@clvtube/common/components/modal/ModalWarningLogin';
+import ModalWarningLogin from '@/common/components/modal/ModalWarningLogin';
 import {
   GAME_LIST_SCREEN,
   SAVED_WORD_LIST,
-} from '@clvtube/common/constants/route.constants';
-import { useAppSelector } from '@clvtube/common/hooks/useAppSelector';
+} from '@/common/constants/route.constants';
+import { useAppSelector } from '@/common/hooks/useAppSelector';
 import { useNavigation } from '@react-navigation/native';
 import { Image, Stack, Text } from 'native-base';
 import React, { useState } from 'react';

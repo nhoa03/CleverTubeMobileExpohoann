@@ -47,6 +47,7 @@ export const SEARCH_PAGE = "Search";
 export const VIDEO_DETAILS_PAGE = "VideoDetails";
 export const SAVE_NEW_WORD = "SaveNewWord";
 export const SAVED_WORD_LIST = "SaveWordList";
+export const GAME_LIST_SCREEN = "GameListScreen";
 
 export const RESULT_OF_DRAG_WORD_GAME = "ResultOfDragWord";
 export const UPDATE_ACCOUNT = "UpdateAccount";
