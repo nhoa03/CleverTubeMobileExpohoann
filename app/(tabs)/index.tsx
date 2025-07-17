@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/common/redux/store";
 import { setMessage } from "@/common/redux/slices/homeSlice";
 
+
 export default function HomeScreen() {
   const dispatch = useDispatch();
   const message = useSelector((state: RootState) => state.home.message);
